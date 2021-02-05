@@ -10,11 +10,7 @@ const App = (_) => {
 
   const getAllComments = () => {
     axios
-      .get(url, {
-        params: {
-          _limit: 13,
-        },
-      })
+      .get(url)
       .then((response) => {
         const allComments = response.data;
 
@@ -41,9 +37,12 @@ const App = (_) => {
   return (
     <BrowserRouter>
       <div className="container">
-        <div className="box">{listComments}</div>
-        <div className="button" onClick={handleClick}>
-          Pull Data
+        <div></div>
+        <div className="inner-container">
+          <div className="box">{listComments}</div>
+          <div className="button" onClick={handleClick}>
+            Pull Data
+          </div>
         </div>
       </div>
     </BrowserRouter>
